@@ -80,14 +80,7 @@ const Navbar_Small = () => {
                         Log In
                       </a>
                     </li>
-                    <li>
-                      <a
-                        href="/Student-signup"
-                        className="block px-4 py-2 text-gray-800 hover:bg-custom-blue hover:rounded hover:h-full hover:text-white p-2"
-                      >
-                        Sign Up
-                      </a>
-                    </li>
+                    
                   </ul>
                 </li>
 
