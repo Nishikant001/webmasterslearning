@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import { useNavigate } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async"; // Import Helmet for SEO
+import { FaInfoCircle } from "react-icons/fa"; 
 const LoginForm = ({ onLogin }) => {
   const URL='https://webmasters-backend-2.onrender.com'
   const navigate = useNavigate(); // Use navigate to redirect after login
@@ -67,6 +68,29 @@ const LoginForm = ({ onLogin }) => {
   };
 
   return (
+    <>
+     {/* SEO Metadata */}
+     <Helmet>
+        <title>Student Login | Webmasters Learning</title>
+        <meta
+          name="description"
+          content="Login to your student dashboard at Webmasters Learning and access your courses, grades, and more."
+        />
+        <meta
+          name="keywords"
+          content="student login, Webmasters Learning, student dashboard, course access, login form"
+        />
+        <meta name="author" content="Webmasters Learning" />
+        <meta property="og:title" content="Student Login | Webmasters Learning" />
+        <meta
+          property="og:description"
+          content="Login to your student dashboard at Webmasters Learning and access all your educational resources."
+        />
+        <meta property="og:image" content="/path-to-your-image.jpg" />
+        <meta property="og:url" content="https://www.webmasterslearning.com/login" />
+        <meta property="og:type" content="website" />
+      </Helmet>
+
     <div className="min-h-screen bg-gradient-to-r from-purple-600 to-blue-500 flex justify-center items-center p-6">
       <div className="w-full max-w-md bg-white p-8 rounded-xl shadow-2xl">
         <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Student Login</h2>
@@ -115,10 +139,21 @@ const LoginForm = ({ onLogin }) => {
             </button>
           </div>
         </form>
-
+        {/* Note for students */}
+        <div className="mt-8 p-4 bg-purple-100 border-l-4 border-purple-500 text-purple-700 rounded-lg flex items-center">
+            <FaInfoCircle className="mr-3 text-purple-600 text-xl" />
+            <p className="text-sm">
+              <strong>Note:</strong> You must be a registered student of Webmasters Learning to log in. If you are not enrolled yet, please{" "}
+              <Link to="/contact" className="underline text-purple-800 hover:text-purple-600">
+                contact us
+              </Link>{" "}
+              for assistance.
+            </p>
+          </div>
         <ToastContainer />
       </div>
     </div>
+    </>
   );
 };
 

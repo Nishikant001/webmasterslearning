@@ -9,6 +9,7 @@ import java from "../images/topCourses/java.jpg";
 import boot from "../images/noramlCourses/boot.avif";
 import mern from "../images/noramlCourses/mern.png";
 import animations from "../images/noramlCourses/animations.jpeg";
+import { Helmet } from "react-helmet-async"; // For SEO
 
 const courses = [
   {
@@ -94,6 +95,29 @@ const CoursesSection = () => {
   };
 
   return (
+    <>
+     {/* SEO Metadata */}
+     <Helmet>
+        <title>Webmasters Learning - Our Courses</title>
+        <meta
+          name="description"
+          content="Explore a wide range of programming and design courses at Webmasters Learning, including React, MERN stack, UI/UX design, and more."
+        />
+        <meta
+          name="keywords"
+          content="React courses, TailwindCSS, Web development, MERN stack, Java, DSA, UI/UX design, programming"
+        />
+        <meta name="author" content="Webmasters Learning" />
+        <meta property="og:title" content="Webmasters Learning - Our Courses" />
+        <meta
+          property="og:description"
+          content="Join Webmasters Learning to master web development, design, and programming skills. Learn React, MERN, Java, and more."
+        />
+        <meta property="og:image" content="/path-to-your-image.jpg" />
+        <meta property="og:url" content="https://www.webmasterslearning.com/courses" />
+        <meta property="og:type" content="website" />
+      </Helmet>
+
     <section className="bg-gray-100 py-10">
       <div className="container mx-auto px-4 mt-20 mb-6">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-10" data-aos="fade-up">
@@ -144,6 +168,7 @@ const CoursesSection = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

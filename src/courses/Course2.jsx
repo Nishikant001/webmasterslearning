@@ -2,6 +2,7 @@ import React from "react";
 import mern from "../images/noramlCourses/mern.png";
 import java from "../images/topCourses/java.jpg";
 import animations from "../images/noramlCourses/animations.jpeg";
+import { Helmet } from "react-helmet-async"; 
 
 const popularCourses = [
   {
@@ -44,6 +45,29 @@ const PopularCoursesSection = () => {
   };
 
   return (
+    <>
+     {/* SEO Metadata */}
+     <Helmet>
+        <title>Webmasters Learning - Popular Courses</title>
+        <meta
+          name="description"
+          content="Explore the most popular programming and development courses at Webmasters Learning, including MERN Stack, Java, DSA, and Animation Libraries."
+        />
+        <meta
+          name="keywords"
+          content="MERN stack courses, Java DSA, Animation libraries, full-stack development, programming courses"
+        />
+        <meta name="author" content="Webmasters Learning" />
+        <meta property="og:title" content="Webmasters Learning - Popular Courses" />
+        <meta
+          property="og:description"
+          content="Join our popular courses to master MERN Stack, Java, DSA, and Animation Libraries, and become a proficient developer."
+        />
+        <meta property="og:image" content="/path-to-your-image.jpg" />
+        <meta property="og:url" content="https://www.webmasterslearning.com/popular-courses" />
+        <meta property="og:type" content="website" />
+      </Helmet>
+
     <section className="bg-gray-100 py-10">
       <div className="container mx-auto px-4 mt-20 mb-6">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">
@@ -109,6 +133,7 @@ const PopularCoursesSection = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

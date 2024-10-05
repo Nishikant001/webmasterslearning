@@ -5,6 +5,7 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import pra from "../images/review/pra.jpg";
 import sub from "../images/review/sub.jpg";
 import ritu from "../images/review/ritu.jpg";
+import { Helmet } from "react-helmet-async"; // Import Helmet for SEO
 
 // Review Data
 const reviews = [
@@ -66,6 +67,29 @@ const ReviewsSection = () => {
   };
 
   return (
+    <>
+    {/* SEO Metadata */}
+    <Helmet>
+        <title>What Our Students Say | Webmasters Learning Reviews</title>
+        <meta
+          name="description"
+          content="Read the testimonials from our students at Webmasters Learning who have excelled in Web Development, Full Stack, and React courses."
+        />
+        <meta
+          name="keywords"
+          content="student reviews, testimonials, Web Development reviews, React Development reviews, Full Stack Development reviews, Webmasters Learning"
+        />
+        <meta name="author" content="Webmasters Learning" />
+        <meta property="og:title" content="What Our Students Say | Webmasters Learning Reviews" />
+        <meta
+          property="og:description"
+          content="Hear from our successful students who have excelled in Web Development, Full Stack Development, and React courses at Webmasters Learning."
+        />
+        <meta property="og:image" content="/path-to-your-image.jpg" />
+        <meta property="og:url" content="https://www.webmasterslearning.com/reviews" />
+        <meta property="og:type" content="website" />
+      </Helmet>
+
     <section className="bg-custom-blue py-16 relative overflow-hidden">
       {/* Circular Background Gradients for Modern Look */}
       <div className="absolute inset-0 flex justify-center items-center overflow-hidden">
@@ -118,6 +142,7 @@ const ReviewsSection = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

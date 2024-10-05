@@ -7,7 +7,7 @@ import liku from "../images/team/liku.jpg";
 import dhall from "../images/team/dhall.jpg";
 import biswal from "../images/team/biswal.jpg";
 import adi from "../images/team/aditya.jpg";
-
+import { Helmet } from "react-helmet-async"; // Import Helmet for SEO
 const instructors = [
   {
     id: 1,
@@ -100,6 +100,29 @@ const TeamSection = () => {
   }, []);
 
   return (
+    <>
+     {/* SEO Metadata */}
+     <Helmet>
+        <title>Webmasters Learning - Meet Our Instructors</title>
+        <meta
+          name="description"
+          content="Meet the expert instructors of Webmasters Learning, specializing in Full-Stack Development, Web Development, Animation, and UI/UX Design."
+        />
+        <meta
+          name="keywords"
+          content="MERN Stack instructors, Web development instructors, Animation experts, UI/UX design instructors, Full-stack development"
+        />
+        <meta name="author" content="Webmasters Learning" />
+        <meta property="og:title" content="Webmasters Learning - Meet Our Instructors" />
+        <meta
+          property="og:description"
+          content="Learn from the best instructors at Webmasters Learning. Our team of professionals specializes in various fields, from full-stack development to UI/UX design."
+        />
+        <meta property="og:image" content="/path-to-your-image.jpg" />
+        <meta property="og:url" content="https://www.webmasterslearning.com/instructors" />
+        <meta property="og:type" content="website" />
+      </Helmet>
+
     <section className="bg-gray-100 py-12">
       <div className="container mx-auto px-4 mt-20 mb-6">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">
@@ -174,6 +197,7 @@ const TeamSection = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

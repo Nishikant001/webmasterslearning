@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
-
+import { HelmetProvider } from 'react-helmet-async'; // Import HelmetProvider
 // Import components
 import Wow from './wow/Wow.jsx';
 import Navbar from "./Navbar/Nav"; 
@@ -21,7 +21,7 @@ import CookiesPolicy from "./PrivecyPolicy/Cookies.jsx";
 import ReviewsSection from "./Team/Reviews.jsx";
 import NotFoundPage from "./404/Notfound.jsx";
 import QueryForm from "./peopls/students/quaryform/Queryform.jsx";
-import StudentAttendance from "./atten/attend.jsx";
+// import StudentAttendance from "./atten/attend.jsx";
 import NotificationsPage from "./notification/Notification.jsx";
 
 
@@ -70,6 +70,7 @@ function App() {
 
   return (
     <div className="App">
+      <HelmetProvider>
       {renderNavbar()}
 
       <Routes>
@@ -86,7 +87,7 @@ function App() {
             <Route path="/cookies" element={<CookiesPolicy />} />
             <Route path="/reviews" element={<ReviewsSection />} />
            
-            <Route path="/student-att" element={<StudentAttendance />} />
+            
             <Route path="/student-not" element={<NotificationsPage />} />
             <Route path="/student-login" element={<LoginForm onLogin={handleLogin} />} />
             <Route path="*" element={<NotFoundPage />} />
@@ -116,6 +117,7 @@ function App() {
 
       <Footer />
       <Wow />
+      </HelmetProvider>
     </div>
   );
 }
