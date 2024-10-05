@@ -23,6 +23,7 @@ import NotFoundPage from "./404/Notfound.jsx";
 import QueryForm from "./peopls/students/quaryform/Queryform.jsx";
 // import StudentAttendance from "./atten/attend.jsx";
 import NotificationsPage from "./notification/Notification.jsx";
+import FloatingLogo from "./FloatingLogo.js";
 
 
 function App() {
@@ -116,7 +117,9 @@ function App() {
       </Routes>
 
       <Footer />
+      <FloatingLogo/>
       <Wow />
+     
       </HelmetProvider>
     </div>
   );
