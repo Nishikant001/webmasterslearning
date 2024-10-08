@@ -3,6 +3,7 @@ import { FiPlus } from "react-icons/fi";
 import { IoPersonCircle } from "react-icons/io5";
 import Navbar_Small from "./Nav_Small";
 
+
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -10,6 +11,7 @@ const Navbar = () => {
     <>
     <nav className="  lg:block hidden ">
       <div className="container-fluid xl:space-x-52 lg:space-x-28  flex justify-center items-center w-full fixed shadow-lg bg-slate-100 p-4 z-50">
+        
         <a href="#" className="text-black text-xl font-bold flex justify-start">
           WebMasters Learning
         </a>

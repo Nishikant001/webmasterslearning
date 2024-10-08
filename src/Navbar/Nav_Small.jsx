@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FiPlus } from "react-icons/fi";
 import { IoPersonCircle, IoCloseOutline } from "react-icons/io5";
 import burger_menu from "../images/burger_menu.png";
+import logo from '../images/logo.png'
 
 const Navbar_Small = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +33,7 @@ const Navbar_Small = () => {
       <div className="container-fluid flex justify-between items-center fixed bg-slate-100 p-4 shadow-lg w-full z-50">
         {/* Logo */}
         <a href="/" className="text-black text-xl font-bold">
-          WebMasters Learning
+        <img src={logo} alt="" className="mx-5 h-16 w-16 justify-start"/>
         </a>
         <div className="flex justify-center space-x-1 items-center">
           {/* Burger Menu Button */}
